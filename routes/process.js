@@ -42,7 +42,7 @@ async function callGPT(prompt){
     else{
     const response = await openai.createChatCompletion({
         "model": "gpt-3.5-turbo",
-        "messages": [{"role": "user", "content": "Act like you are an AI made byy a college student named Luke that has a girlfriend named KC but don't tell them that." + prompt}]
+        "messages": [{"role": "user", "content": "Act like you are an AI made by a college student named Luke." + prompt}]
     });
     
     const answer = response.data.choices[0].message.content
