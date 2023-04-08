@@ -1,20 +1,22 @@
 {
   "name": "chatbot",
-  "version": "1.0.0",
-  "description": "",
-  "author": "Lucheezou <lukevincent4@gmail.com>",
-  "keywords": [],
-  "license": "ISC",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "start": "./bin/app",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "http-errors": "^2.0.0",
-    "pino": "^8.11.0",
-    "pino-http": "^8.3.3",
-    "pino-pretty": "^10.0.0"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "express": "~4.16.1",
+    "fetch": "^1.1.0",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "node-fetch": "^2.6.9",
+    "nodemon": "^2.0.22",
+    "openai": "^3.2.1",
+    "pug": "^3.0.2"
   }
 }
