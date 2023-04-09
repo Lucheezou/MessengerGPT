@@ -5,8 +5,12 @@ module.exports = (req, res) => {
     req.body.entry.forEach(entry => {
       entry.messaging.forEach(event => {
         if (event.message && event.message.text) {
+            if (lastsent === event.message.text){
+              return;
+            }
             console.log(event)
             processMessage(event)
+            let lastsent = event.message.text;
         }
       });
     });
