@@ -9,7 +9,7 @@ let lastsent = "";
       console.log(req.body.entry.messaging)
       entry.messaging.forEach(event => {
         if (event.message && event.message.text) {
-            if (lastsent == event.message.text){
+            if (lastsent === event.message.text){
             return
             }
             console.log(event)
