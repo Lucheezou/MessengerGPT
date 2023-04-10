@@ -10,19 +10,19 @@ const openai = new OpenAIApi(configuration);
 async function callGPT(prompt){
 
     console.log("gpt answering...")
-
+    
     if (prompt.split("")[0] == "/"){
         if (prompt.split(" ")[0] == "/create"){
 
-            const response = await openai.createCompletion({
+            const response = openai.createCompletion({
                 "model": "text-davinci-003",
                 "prompt": prompt,
                 "temperature": 0,
                 "max_tokens": 2048
             });
             
-            const answer = response.data.choices[0].text
-            
+            const answer = await response
+            answer = answer.data.choices[0].text
             console.log(answer)
             return answer
 
@@ -40,12 +40,13 @@ async function callGPT(prompt){
     }
 
     else{
-    const response = await openai.createChatCompletion({
+    const response = openai.createChatCompletion({
         "model": "gpt-3.5-turbo",
         "messages": [{"role": "user", "content": "Act like you are an AI made by a college student named Luke." + prompt}]
     });
     
-    const answer = response.data.choices[0].message.content
+    const answer = await response
+    answer = answer.data.choices[0].message.content
     console.log(answer)
     return answer
     }
