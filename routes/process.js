@@ -21,7 +21,7 @@ async function callGPT(prompt){
                 "max_tokens": 2048
             });
             
-            const answer = await response
+            let answer = await response
             answer = answer.data.choices[0].text
             console.log(answer)
             return answer
@@ -45,7 +45,7 @@ async function callGPT(prompt){
         "messages": [{"role": "user", "content": "Act like you are an AI made by a college student named Luke." + prompt}]
     });
     
-    const answer = await response
+    let answer = await response
     answer = answer.data.choices[0].message.content
     console.log(answer)
     return answer
